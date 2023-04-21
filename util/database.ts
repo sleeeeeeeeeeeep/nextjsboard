@@ -1,7 +1,6 @@
 import { MongoClient } from 'mongodb'
 
 const url: any = process.env.MONGODB_URL
-console.log(url)
 let connectDB: any
 
 if (process.env.NODE_ENV === 'development') {
