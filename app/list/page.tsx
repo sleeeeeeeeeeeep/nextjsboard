@@ -25,6 +25,8 @@ export default async function List() {
                                 <h4>{post.title}</h4>
                             </Link>
                             <DetailLink postId={post._id}/>
+
+                            <Link href={'/edit/' + post._id}>✏️</Link>
                         </div>
                     )
                 })
