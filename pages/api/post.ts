@@ -23,4 +23,20 @@ export default async function handler(req: any, res: any) {
 
         return res.redirect(302, "/list")
     }
+
+    if (req.method == "DELETE") {
+        if (req.body == '') {
+            return res.status(500).json('id 없음')
+        }
+
+        try {
+            const db: any = (await connectDB).db("forum");
+            let result = await db.collection("post").deleteOne({_id: new ObjectId(req.body)})
+            console.log(result)
+        } catch (error) {
+            console.log(error)
+        }
+
+        return res.redirect(302, "/list")    
+    }
 }
