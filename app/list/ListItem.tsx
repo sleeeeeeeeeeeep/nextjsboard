@@ -26,9 +26,9 @@ export default function ListItem(props: any) {
                                 <h4>{post.title}</h4>
                             </Link>
                             <DetailLink postId={post._id} />
-                            <br/>
+                            <br />
                             <Link href={'/edit/' + strPostId}>✏️</Link>
-                            <br/>
+                            <br />
                             <span onClick={() => { deletePost(strPostId) }}>삭제</span>
                         </div>
                     )
@@ -41,6 +41,12 @@ export default function ListItem(props: any) {
         fetch('/api/post', {
             method: 'DELETE',
             body: postId
+        }).then((r) => {
+            r.json();
+        }).then((result) => {
+
+        }).catch((error) => {
+            console.log('실패')
         })
     }
 }
