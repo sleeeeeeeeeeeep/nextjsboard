@@ -1,8 +1,8 @@
 import { connectDB } from "@/util/database";
 import ListItem from "./ListItem";
 
-// 강제로 dynamic rendering
-export const dynamic = 'force-dynamic'
+// 20초동안 캐싱
+export const revalidate = 20
 
 export default async function List() {
     let db: any = (await connectDB).db('forum');
