@@ -12,6 +12,7 @@ export default async function handler(req: any, res: any) {
     }
 
     // 유저 세션정보
+    // @ts-ignore
     let session = await getServerSession(req, res, authOptions)
 
     if (req.method == "POST") {
