@@ -37,7 +37,7 @@ export default function ListItem(props: any) {
         </div>
     )
 
-    function deletePost(postId: string) {
+    function deletePost(postId: string | ReadableStream) {
         fetch('/api/post', {
             method: 'DELETE',
             body: postId
