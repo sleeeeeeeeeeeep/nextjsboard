@@ -1,5 +1,6 @@
 import { connectDB } from "@/util/database";
 import { ObjectId } from "mongodb";
+import Comment from "./comment";
 
 export default async function Detail(props: any) {
     let db: any = (await connectDB).db("forum");
@@ -20,6 +21,8 @@ export default async function Detail(props: any) {
             <h4>상세페이지</h4>
             <h4>{post.title}</h4>
             <p>{post.content}</p>
+
+            <Comment postId={props.params.id}/>
         </div>
     )
 }
