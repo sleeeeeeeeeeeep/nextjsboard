@@ -24,15 +24,13 @@ export default function Comment(props: any) {
 
             {
                 data.length > 0 ?
-                data.map((comment: any, i: number) => {
-                    
-                    return (
-                        <div key={i}>
-                            <p>{comment.author}: {comment.content}</p>
-                        </div>
-                    )
-                })
-                : '댓글 x'
+                    data.map((comment: any, i: number) => {
+
+                        return (
+                            <p key={i}>{comment.author}: {comment.content}</p>
+                        )
+                    })
+                    : '댓글 x'
             }
         </div>
     )
